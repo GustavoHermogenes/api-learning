@@ -11,7 +11,7 @@ class Instrutor extends Model
     public function Regras()
     {
         return [
-            'nome' => 'required|unique:instrutores,nome|min:3',
+            'nome' => 'required|unique:instrutors,'.$this->id.'nome|min:3',
             'foto' => 'required|file|mimes:png,jpg'
         ];
     }
