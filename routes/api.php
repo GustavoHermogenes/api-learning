@@ -19,3 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('aluno', 'App\Http\Controllers\AlunoController');
+
+Route::apiResource('instrutor', 'App\Http\Controllers\InstrutorController');
+

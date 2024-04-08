@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('instrutors', function (Blueprint $table) {
             $table->id();
-            $table->string('nome', 30);
-            $table->string('email', 30)->unique();
-            $table->string('foto', 100)->comment('Foto de Perfil');
+            $table->string('nome', 30)->unique();
+            $table->string('foto', 100);
             $table->timestamps();
         });
     }
+
     /**
      * Reverse the migrations.
      *
