@@ -36,6 +36,14 @@ class InstrutorController extends Controller
         return response()->json($instrutor, 200);
     }
 
+
+     /**
+     * Display the specified resource.
+     *
+     * @param  Integer
+     * @return \Illuminate\Http\Response
+     */
+
     public function show($id)
     {
         $instrutor = $this->instrutor->find($id);
@@ -44,6 +52,15 @@ class InstrutorController extends Controller
         }
         return response()->json($instrutor, 200);
     }
+
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  Integer
+     * @return \Illuminate\Http\Response
+     */
 
     public function update(Request $request, $id)
     {
@@ -68,6 +85,14 @@ class InstrutorController extends Controller
 
         return response()->json($instrutor, 200);
     }
+
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  Integer
+     * @return \Illuminate\Http\Response
+     */
 
     public function destroy($id)
     {
