@@ -1,66 +1,89 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="banner.svg" width="100%" alt="API Academia"/>
 </p>
 
-## About Laravel
+<p align="center">
+  <img src="https://img.shields.io/badge/PHP-8.0-1E1E1E?style=for-the-badge&logo=php&logoColor=FF2D20"/>
+  <img src="https://img.shields.io/badge/Laravel-9-1E1E1E?style=for-the-badge&logo=laravel&logoColor=FF2D20"/>
+  <img src="https://img.shields.io/badge/MySQL-1E1E1E?style=for-the-badge&logo=mysql&logoColor=FF2D20"/>
+  <img src="https://img.shields.io/badge/REST_API-1E1E1E?style=for-the-badge&logo=postman&logoColor=FF2D20"/>
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## <img src="https://img.shields.io/badge/-%20-FF2D20?style=flat-square" height="15" align="absmiddle"/> Sobre o projeto
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+**API REST** desenvolvida em **Laravel** para praticar a construção de APIs. Ela gerencia o cadastro de **alunos** e **instrutores**, com **upload de foto**, validação de dados e respostas em JSON.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## <img src="https://img.shields.io/badge/-%20-FF2D20?style=flat-square" height="15" align="absmiddle"/> Funcionalidades
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- CRUD completo de alunos e instrutores via `apiResource`
+- Upload de imagem com armazenamento no disco `public`
+- Remoção automática da foto antiga ao atualizar o registro
+- Atualização parcial com `PATCH`, validando apenas os campos enviados
+- Mensagens de validação personalizadas
+- Respostas de erro em JSON (`404` para registros inexistentes)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## <img src="https://img.shields.io/badge/-%20-FF2D20?style=flat-square" height="15" align="absmiddle"/> Endpoints
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+| Método | Rota | Descrição |
+|:---:|:---|:---|
+| `GET` | `/api/aluno` | Lista todos os alunos |
+| `POST` | `/api/aluno` | Cadastra um aluno (`nome`, `foto`) |
+| `GET` | `/api/aluno/{id}` | Exibe um aluno |
+| `PUT` / `PATCH` | `/api/aluno/{id}` | Atualiza um aluno (completo ou parcial) |
+| `DELETE` | `/api/aluno/{id}` | Remove um aluno |
+| `GET` | `/api/instrutor` | Lista todos os instrutores |
+| `POST` | `/api/instrutor` | Cadastra um instrutor (`nome`, `foto`) |
+| `GET` | `/api/instrutor/{id}` | Exibe um instrutor |
+| `PUT` / `PATCH` | `/api/instrutor/{id}` | Atualiza um instrutor (completo ou parcial) |
+| `DELETE` | `/api/instrutor/{id}` | Remove um instrutor |
 
-### Premium Partners
+> Envie `POST`, `PUT` e `PATCH` como `multipart/form-data` quando houver foto.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+---
 
-## Contributing
+## <img src="https://img.shields.io/badge/-%20-FF2D20?style=flat-square" height="15" align="absmiddle"/> Como executar
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+**Pré-requisitos:** PHP 8.0+, Composer e MySQL.
 
-## Code of Conduct
+```bash
+# Clonar o repositório
+git clone https://github.com/GustavoHermogenes/api-learning.git
+cd api-learning
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Instalar as dependências
+composer install
 
-## Security Vulnerabilities
+# Configurar o ambiente
+cp .env.example .env
+php artisan key:generate
+# Ajuste as credenciais do banco de dados no arquivo .env
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Criar as tabelas e o link público das imagens
+php artisan migrate
+php artisan storage:link
 
-## License
+# Iniciar o servidor
+php artisan serve
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+A API estará disponível em `http://localhost:8000/api`.
+
+---
+
+## <img src="https://img.shields.io/badge/-%20-FF2D20?style=flat-square" height="15" align="absmiddle"/> Autor
+
+<p>
+  <b>Gustavo Hermogenes</b> — Desenvolvedor Full Stack<br/><br/>
+  <a href="https://github.com/GustavoHermogenes" target="_blank"><img src="https://img.shields.io/badge/GitHub-1E1E1E?style=for-the-badge&logo=github&logoColor=FF2D20"/></a>
+  <a href="https://www.linkedin.com/in/gustavohermogenes/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-1E1E1E?style=for-the-badge&logo=linkedin&logoColor=FF2D20"/></a>
+</p>
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF2D20,100:1E1E1E&height=100&section=footer" width="100%"/>
+</p>
